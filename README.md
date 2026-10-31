@@ -1,6 +1,18 @@
 # Arduino HDQ Mock BMS
 
-Arduino firmware and host-side tests for a mock Panasonic-style battery management system. The firmware emits the recorded HDQ presence heartbeat needed by the bike controller and implements battery state-of-charge display, charger detection, charger control, and button handling on an Arduino-compatible board.
+Arduino firmware for a mock Panasonic-style battery management system (BMS). The firmware emits the recorded HDQ presence heartbeat needed by the bike controller and implements battery state-of-charge display, charger detection, charger control, and button handling on an Arduino-compatible board.
+
+**Why would you want to mock a BMS?**
+
+I got a 15 year old e-bike with a worn out Li-ion Mn battery (NKY281B2 10Ah 259Wh).
+I replaced the cells with new ones plus a new BMS. In order for this new combination
+to play along with the e-bike you need to feed the proper electrical signals on the
+"HDQ"-bus, so that the e-bike controller & motor can play along.
+
+Background information:
+- [Texas Instruments "HDQ Communication Basics"](https://www.ti.com/lit/an/slua408a/slua408a.pdf)
+- [OpenBattery infos about 26V Panasonic NKY](https://open-battery.org/docs/panasonic/26v-premium-nky-stb/)
+
 
 ## Prerequisites
 
