@@ -67,6 +67,8 @@ The sketch uses these fixed hardware mappings:
 - Battery voltage input: `A3`
 - T/ID voltage input: `A0`
 
+![PCB hardware](img/pcb.jpg)
+
 ## Project structure
 
 ```text
