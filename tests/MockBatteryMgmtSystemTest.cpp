@@ -317,7 +317,7 @@ TEST(MockBatteryMgmtSystem, DisplaysStateOfChargeWhenChargerBecomesActive)
     expectDisplayOn(board);
 }
 
-TEST(MockBatteryMgmtSystem, TurnsDisplayOffWhenChargerBecomesInactive)
+TEST(MockBatteryMgmtSystem, TurnsDisplayOffWhenBatteryGetsRemovedFromCharger)
 {
     TestArduinoBoard board;
     MockBatteryMgmtSystem mockBMS{board};
@@ -327,6 +327,22 @@ TEST(MockBatteryMgmtSystem, TurnsDisplayOffWhenChargerBecomesInactive)
     ASSERT_TRUE(board.isActive(0));
 
     board.setTIDVoltage(0.0F);
+    mockBMS.update();
+
+    expectDisplayOn(board, false);
+}
+
+TEST(MockBatteryMgmtSystem, TurnsDisplayOffWhenBatteryIsCharged)
+{
+    TestArduinoBoard board;
+    MockBatteryMgmtSystem mockBMS{board};
+
+    board.placeIntoCharger();
+    setSoCPercentage(board, 90);
+    mockBMS.update();
+    ASSERT_TRUE(board.isActive(0));
+
+    setSoCPercentage(board, 100);
     mockBMS.update();
 
     expectDisplayOn(board, false);

@@ -62,6 +62,8 @@ void MockBatteryMgmtSystem::update()
         chargerActivationUpdateCount = 0;
         chargeLimitReached = true;
         board.activateCharger(false);
+
+        displayOff();
     } else if (chargeLimitReached &&
                stateOfCharge >= ChargeLimitPercent - ChargeLimitHysteresisPercent) {
         chargerActivationUpdateCount = 0;
