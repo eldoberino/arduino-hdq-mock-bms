@@ -70,7 +70,7 @@ Example:
 make upload PORT=/dev/ttyUSB0 BOARD=arduino:avr:nano:cpu=atmega328old
 ```
 
-The sketch uses these fixed hardware mappings:
+The sketch uses these hardware mappings:
 
 - HDQ output: digital pin 12
 - Status LEDs: digital pins 6, 5, 4, 3, and 2
@@ -80,6 +80,13 @@ The sketch uses these fixed hardware mappings:
 - T/ID voltage input: `A0`
 
 ![PCB hardware](img/pcb.jpg)
+
+Why is the breadboard so crooked?  
+
+When you use a breadboard and turn it by 26.6°, the LEDs & the button switch will
+match nicely into the housing -- no cabling needed.  
+See pictures in [img](img/)
+
 
 ## Project structure
 
